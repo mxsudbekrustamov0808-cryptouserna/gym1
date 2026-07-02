@@ -129,9 +129,28 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 
+# ====================== CORS SETTINGS ======================
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",                    # Frontend (Vite)
-    "https://gym1-m0wx.onrender.com",    # Netlify saytingiz
+    "http://localhost:5173",
+    "https://gym1-m0wx.onrender.com",
+    # "https://your-frontend.netlify.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ALLOW_METHODS = [
+    'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
