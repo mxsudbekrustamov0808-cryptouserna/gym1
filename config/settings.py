@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'subscriptions',
     'drf_yasg',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -119,11 +122,16 @@ STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT=BASE_DIR/'media'
 
-STATIC_URL = 'static/'
+
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",                    # Frontend (Vite)
+    "https://gym1-m0wx.onrender.com",    # Netlify saytingiz
+]
 
+CORS_ALLOW_CREDENTIALS = True
